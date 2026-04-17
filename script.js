@@ -80,7 +80,7 @@ sectionNodes.forEach((section) => sectionObserver.observe(section));
 
 setActiveSection(
   "hero",
-  "Welcome. The portfolio opens with a 3D stage before moving into the story, the results, and the operating style.",
+  "Welcome. The portfolio opens like a living HR sketchbook before moving into story, results, and working style.",
   "01"
 );
 
