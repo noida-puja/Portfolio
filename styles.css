@@ -357,6 +357,13 @@ span {
   margin-bottom: 18px;
 }
 
+.section-intro {
+  max-width: 42rem;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
 .morph-divider {
   position: relative;
   height: 92px;
@@ -422,6 +429,16 @@ span {
   border-bottom: 0;
 }
 
+.soft-quote {
+  margin: 10px 0 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(117, 140, 144, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--text);
+  font-weight: 600;
+}
+
 .stat-value {
   display: block;
   font-family: "Fraunces", serif;
@@ -470,9 +487,37 @@ span {
 
 .timeline-company {
   margin-top: 0;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   color: var(--accent);
   font-weight: 800;
+}
+
+.timeline-meta {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.metric-label {
+  margin: 18px 0 10px;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.metric-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.metric-list li {
+  padding-left: 2px;
 }
 
 .card-grid,
