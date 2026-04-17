@@ -307,6 +307,49 @@ span {
   gap: 12px;
 }
 
+.profile-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.profile-link-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  border: 1px solid rgba(138, 112, 100, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.58);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.profile-link-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(117, 140, 144, 0.28);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.profile-link-label {
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profile-link-url {
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -648,6 +691,10 @@ span {
 
   .hero-copy {
     padding: 36px 28px;
+  }
+
+  .profile-links {
+    grid-template-columns: 1fr;
   }
 
   .panel,
