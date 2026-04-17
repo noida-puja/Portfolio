@@ -18,20 +18,36 @@
   </head>
   <body>
     <div class="page-shell">
+      <div class="ambient-orb ambient-orb-a" aria-hidden="true"></div>
+      <div class="ambient-orb ambient-orb-b" aria-hidden="true"></div>
+
       <header class="site-header">
         <a class="brand" href="#top">PR</a>
         <nav class="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#capability-highlights">Capabilities</a>
-          <a href="#library">Portfolio Library</a>
+          <a data-nav href="#about">About</a>
+          <a data-nav href="#experience">Experience</a>
+          <a data-nav href="#capability-highlights">Capabilities</a>
+          <a data-nav href="#library">Portfolio Library</a>
         </nav>
       </header>
 
+      <aside class="guide-panel reveal" aria-live="polite">
+        <p class="guide-label">Portfolio Guide</p>
+        <p class="guide-message" id="guide-message">
+          Welcome. Start with the overview, then follow the timeline and
+          capability story.
+        </p>
+      </aside>
+
       <main id="top">
-        <section class="hero reveal">
+        <section
+          class="hero reveal"
+          data-section="hero"
+          data-voice="Welcome. This portfolio opens with a quick professional snapshot before moving into the career story."
+        >
           <div class="hero-copy">
             <p class="eyebrow">Human Resources Portfolio</p>
+            <p class="conversation-note">Let us begin with the overview.</p>
             <h1>Puja Raghav</h1>
             <p class="hero-summary">
               Senior Executive Human Resources with a career path spanning
@@ -70,9 +86,23 @@
           </aside>
         </section>
 
-        <section class="section reveal" id="about">
+        <div class="morph-divider reveal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section
+          class="section reveal"
+          id="about"
+          data-section="about"
+          data-voice="This section explains the thinking behind the portfolio and the professional framing of the profile."
+        >
           <div class="section-heading">
             <p class="eyebrow">About</p>
+            <p class="conversation-note">
+              Here is the context behind the story.
+            </p>
             <h2>A practical, people-first HR story</h2>
           </div>
           <div class="grid-two">
@@ -107,9 +137,23 @@
           </div>
         </section>
 
-        <section class="section reveal" id="experience">
+        <div class="morph-divider reveal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section
+          class="section reveal"
+          id="experience"
+          data-section="experience"
+          data-voice="Now the experience timeline takes over, so the role progression feels easy to follow at a glance."
+        >
           <div class="section-heading">
             <p class="eyebrow">Experience</p>
+            <p class="conversation-note">
+              Then comes the progression, one role at a time.
+            </p>
             <h2>Career timeline</h2>
           </div>
           <div class="timeline">
@@ -147,9 +191,23 @@
           </div>
         </section>
 
-        <section class="section reveal" id="capability-highlights">
+        <div class="morph-divider reveal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section
+          class="section reveal"
+          id="capability-highlights"
+          data-section="capabilities"
+          data-voice="After the timeline, the portfolio shifts into the strengths and working themes that define the profile."
+        >
           <div class="section-heading">
             <p class="eyebrow">Capabilities</p>
+            <p class="conversation-note">
+              This is where the value becomes more concrete.
+            </p>
             <h2>Core portfolio themes</h2>
           </div>
           <div class="card-grid">
@@ -184,9 +242,20 @@
           </div>
         </section>
 
-        <section class="section reveal education-section">
+        <div class="morph-divider reveal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section
+          class="section reveal education-section"
+          data-section="education"
+          data-voice="This section grounds the profile in the academic path behind the professional journey."
+        >
           <div class="section-heading">
             <p class="eyebrow">Education</p>
+            <p class="conversation-note">A quick look at the academic base.</p>
             <h2>Academic background</h2>
           </div>
           <div class="education-grid">
@@ -201,9 +270,23 @@
           </div>
         </section>
 
-        <section class="section reveal" id="library">
+        <div class="morph-divider reveal" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <section
+          class="section reveal"
+          id="library"
+          data-section="library"
+          data-voice="The final section acts like an organized professional library, ready to grow with documents, certificates, and capability notes."
+        >
           <div class="section-heading">
             <p class="eyebrow">Portfolio Library</p>
+            <p class="conversation-note">
+              Finally, everything supporting the profile stays organized here.
+            </p>
             <h2>Folders ready for ongoing growth</h2>
           </div>
           <div class="library-grid">
