@@ -185,6 +185,42 @@
     counters.forEach((c) => countIO.observe(c));
   }
 
+  /* ---------- Profile photo lightbox (mobile only) ---------- */
+  const lightbox = document.getElementById("picLightbox");
+  const brandMark = document.querySelector(".brand-mark");
+  const isMobile = () => window.matchMedia("(max-width: 768px)").matches;
+
+  function openLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (brandMark && lightbox) {
+    brandMark.addEventListener("click", (e) => {
+      if (isMobile()) {
+        e.preventDefault();
+        e.stopPropagation();
+        openLightbox();
+      }
+    });
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target.closest("[data-close-lightbox]")) {
+        closeLightbox();
+      }
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) closeLightbox();
+    });
+  }
+
   /* ---------- Smooth-scroll for in-page anchors ---------- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {

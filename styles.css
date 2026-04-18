@@ -970,6 +970,70 @@ body.theme-dark-active .btn-ghost:hover { background: var(--fg-dark); color: var
   .reveal { opacity: 1; transform: none; }
 }
 
+/* ============ PROFILE LIGHTBOX (mobile-only trigger) ============ */
+.pic-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.94);
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.pic-lightbox.open {
+  display: flex;
+  opacity: 1;
+}
+.pic-lightbox__frame {
+  position: relative;
+  max-width: 92vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  transform: scale(0.94);
+  transition: transform 0.4s var(--ease-out);
+}
+.pic-lightbox.open .pic-lightbox__frame { transform: scale(1); }
+.pic-lightbox__frame img {
+  width: auto;
+  max-width: 92vw;
+  max-height: 72vh;
+  border-radius: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.6);
+}
+.pic-lightbox__frame figcaption {
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+.pic-lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s var(--ease-out);
+}
+.pic-lightbox__close:hover { background: rgba(255, 255, 255, 0.22); transform: rotate(90deg); }
+
 /* ============================================================
    MOBILE OPTIMIZATION (≤768px)
    Overrides only — desktop view untouched.
@@ -1013,16 +1077,9 @@ body.theme-dark-active .btn-ghost:hover { background: var(--fg-dark); color: var
     gap: 28px;
   }
   .hero-copy { gap: 20px; }
-  .hero-portrait {
-    order: -1;
-    justify-self: center;
-    max-width: 320px;
-    margin: 0 auto;
-    padding: 10px 10px 18px 10px;
-  }
-  .portrait-wrap { max-width: 320px; }
-  .portrait-wrap::before { inset: 10px -10px -14px 10px; }
-  .portrait-corner { width: 18px; height: 18px; border-width: 2px; }
+  /* Hide hero portrait on mobile — avatar in header opens it as lightbox */
+  .hero-portrait { display: none; }
+  .brand-mark { cursor: zoom-in; }
 
   .hero-actions { flex-wrap: wrap; gap: 10px; }
   .btn { padding: 12px 20px; font-size: 14px; }
