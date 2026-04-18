@@ -1,0 +1,125 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Puja Raghav",
+  "jobTitle": "Senior Executive — Human Resources",
+  "description": "HR Professional with 4+ years across Talent Acquisition, HR Operations, and Employee Relations. People-first approach balancing empathy with operational discipline.",
+  "email": "mailto:noida.puja@gmail.com",
+  "url": "https://noida-puja.github.io/Portfolio/",
+  "image": "https://noida-puja.github.io/Portfolio/Profile-pic.jpeg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Gurugram",
+    "addressRegion": "Haryana",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/puja-r-964060224/",
+    "https://github.com/noida-puja/Portfolio"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Abreco Freight",
+    "location": "Delhi, India"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "APJ Abdul Kalam Technological University",
+      "description": "Master of Business Administration (MBA)"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Choudhary Charan Singh University, Meerut",
+      "description": "Bachelor of Commerce (B.Com)"
+    }
+  ],
+  "knowsAbout": [
+    "Talent Acquisition",
+    "Full-Cycle Recruitment",
+    "Sourcing",
+    "Screening",
+    "Interviewing",
+    "Headhunting",
+    "Executive Search",
+    "Onboarding",
+    "HR Operations",
+    "Payroll Inputs",
+    "Attendance & Leave Management",
+    "Compliance Support",
+    "Employee Relations",
+    "Employee Engagement",
+    "Performance Management",
+    "Retention",
+    "HR Policy",
+    "EdTech Hiring",
+    "Logistics/Freight HR",
+    "People Operations"
+  ],
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Senior Executive — Human Resources",
+      "employer": "Abreco Freight",
+      "startDate": "2023-09",
+      "endDate": "Present",
+      "location": "Delhi, India (On-site)",
+      "description": "Leading end-to-end HR for a growing freight business — hiring, onboarding, payroll inputs, policy, employee relations, engagement.",
+      "achievements": [
+        "Closed 50+ roles across freight operations, logistics, and support functions",
+        "Rebuilt onboarding into a structured 7-day journey — 30% faster time-to-productivity",
+        "100% payroll accuracy month-on-month",
+        "Cut employee query resolution time by 40% via single point-of-contact workflow",
+        "Ran monthly engagement rituals that lifted participation and internal morale"
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "name": "Talent Acquisition Specialist",
+      "employer": "Dataisgood",
+      "startDate": "2021-12",
+      "endDate": "2023-08",
+      "location": "Noida, India (Remote)",
+      "description": "Owned full-cycle hiring for a fast-moving EdTech team — sourcing, screening, interviewing, onboarding.",
+      "achievements": [
+        "Closed 60+ EdTech roles across revenue, operations, and academic teams",
+        "Screened 200+ candidates and conducted 100+ structured interviews",
+        "Onboarded 50+ new hires with a consistent day-one experience",
+        "95% candidate follow-up rate",
+        "Supported trainer enablement, easing hire-to-contribution ramp"
+      ]
+    },
+    {
+      "@type": "Occupation",
+      "name": "Executive Search Consultant",
+      "employer": "Strategic Talent Partner",
+      "startDate": "2021-01",
+      "endDate": "2021-12",
+      "location": "Gurugram, India (Remote)",
+      "description": "Partnered with client companies on executive and niche hiring — briefs, headhunting, interview coordination, onboarding follow-up.",
+      "achievements": [
+        "Delivered on 25+ client mandates across diverse corporate roles",
+        "Sourced and shortlisted 300+ candidates through targeted headhunting",
+        "Coordinated 50+ interview rounds",
+        "90% client satisfaction rate across hiring projects",
+        "Wrote 30+ structured job descriptions"
+      ]
+    }
+  ],
+  "metrics": {
+    "yearsExperience": 4,
+    "rolesClosedAllTime": "110+",
+    "candidatesSourced": "300+",
+    "payrollAccuracy": "100%",
+    "onboardingEfficiencyGain": "30%",
+    "queryResolutionImprovement": "40%",
+    "clientSatisfaction": "90%",
+    "candidateFollowUpRate": "95%"
+  },
+  "principles": [
+    "Listen before designing the process.",
+    "Keep communication open, timely, and clear.",
+    "Balance empathy with operational discipline."
+  ],
+  "openToWork": true
+}

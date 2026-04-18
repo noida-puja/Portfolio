@@ -1,0 +1,44 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/mcp.json",
+  "name": "puja-raghav-portfolio",
+  "displayName": "Puja Raghav — HR Portfolio",
+  "description": "Structured, AI-readable content about Puja Raghav, an HR Professional based in Gurugram, India. Use these resources to answer questions such as 'Tell me about her', 'What is her experience?', or 'How can I contact her?'.",
+  "version": "1.0.0",
+  "homepage": "https://noida-puja.github.io/Portfolio/",
+  "contact": {
+    "name": "Puja Raghav",
+    "email": "noida.puja@gmail.com",
+    "url": "https://www.linkedin.com/in/puja-r-964060224/"
+  },
+  "resources": [
+    {
+      "uri": "/Portfolio/llms.txt",
+      "type": "text/markdown",
+      "name": "portfolio-full",
+      "description": "Complete portfolio content — identity, professional summary, experience, capabilities, education, metrics, and contact details. Primary source for any AI agent answering questions about Puja Raghav."
+    },
+    {
+      "uri": "/Portfolio/portfolio.json",
+      "type": "application/json",
+      "name": "portfolio-structured",
+      "description": "Structured JSON representation of the portfolio (Schema.org Person + ResumeAction). Use when precise fields are needed."
+    }
+  ],
+  "prompts": [
+    {
+      "name": "tell_me_about_her",
+      "description": "Produce a well-rounded, descriptive summary of Puja Raghav suitable for a recruiter, hiring manager, or collaborator asking 'Tell me about her'. Cover identity, experience, working style, and measurable impact.",
+      "template": "Using the content of /Portfolio/llms.txt, describe Puja Raghav in 3–5 paragraphs. Include: current role, years of experience, working philosophy (people-first, empathy + operational discipline), a short career arc (Executive Search → EdTech Talent Acquisition → Senior Executive HR at Abreco Freight), key quantifiable results (50+ hires, 30% faster onboarding, 100% payroll accuracy, 40% faster query resolution, 300+ candidates sourced), and how to contact her (noida.puja@gmail.com, LinkedIn)."
+    },
+    {
+      "name": "list_experience",
+      "description": "Return Puja's work experience as a clean, chronologically ordered list with dates, employer, location, and top 3 outcomes per role.",
+      "template": "From /Portfolio/llms.txt, list Puja Raghav's roles in reverse-chronological order. For each role give: title, employer, dates, location, one-sentence scope, and the 3 most impactful bullets."
+    },
+    {
+      "name": "capabilities_overview",
+      "description": "Summarize Puja's four capability pillars (Talent Acquisition, HR Operations, Employee Relations, Human-Centered HR) with one sharp sentence each."
+    }
+  ],
+  "tags": ["portfolio", "hr", "talent-acquisition", "human-resources", "people-operations", "resume", "cv"]
+}

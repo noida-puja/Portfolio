@@ -3,570 +3,321 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Puja Raghav | HR Portfolio</title>
+    <title>Puja Raghav — HR Portfolio</title>
     <meta
       name="description"
-      content="Interactive HR portfolio for Puja Raghav, showcasing talent acquisition, HR operations, employee relations, and people-first leadership."
+      content="Puja Raghav — HR Professional. Talent Acquisition, HR Operations, and Employee Relations with 4+ years of experience."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="background-mesh" aria-hidden="true"></div>
-    <div class="cursor-glow" aria-hidden="true"></div>
+    <header class="site-header" id="site-header">
+      <a class="brand" href="#top" id="logo-swap">
+        <span class="brand-mark" id="brand-mark">
+          <img src="./Profile-pic.jpeg" alt="Puja Raghav" />
+        </span>
+        <span class="brand-text">
+          <strong>Puja Raghav</strong>
+          <small>HR Portfolio</small>
+        </span>
+      </a>
 
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="brand" href="#top">
-          <span class="brand-mark">PR</span>
-          <span class="brand-copy">
-            <strong>Puja Raghav</strong>
-            <small>HR Portfolio</small>
-          </span>
-        </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-        <nav class="site-nav" aria-label="Primary">
-          <a data-nav href="#about">About</a>
-          <a data-nav href="#experience">Experience</a>
-          <a data-nav href="#capabilities">Capabilities</a>
-          <a data-nav href="#library">Library</a>
-        </nav>
+      <button class="connect-open" data-open-drawer>
+        Connect
+        <span class="connect-open__dot" aria-hidden="true"></span>
+      </button>
+    </header>
 
-        <div class="header-links">
-          <a
-            href="https://www.linkedin.com/in/puja-r-964060224/"
-            target="_blank"
-            rel="noreferrer"
-            >LinkedIn</a
-          >
-          <a
-            href="https://github.com/noida-puja/Portfolio"
-            target="_blank"
-            rel="noreferrer"
-            >GitHub</a
-          >
+    <aside class="drawer" id="drawer" aria-hidden="true">
+      <button class="drawer__close" data-close-drawer aria-label="Close">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        <span>Close</span>
+      </button>
+      <div class="drawer__inner">
+        <h2 class="drawer__title">Let's connect</h2>
+        <div class="drawer__grid">
+          <a class="drawer__card" href="https://www.linkedin.com/in/puja-r-964060224/" target="_blank" rel="noreferrer">
+            <div class="drawer__card-head">Looking for an HR partner?</div>
+            <div class="drawer__card-sub">Reach out on LinkedIn →</div>
+          </a>
+          <a class="drawer__card" href="https://mail.google.com/mail/?view=cm&fs=1&to=noida.puja@gmail.com&su=Potential%20HR%20opportunity%20%E2%80%94%20%5BCompany%20Name%5D&body=Dear%20Puja%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20experience%20across%20Talent%20Acquisition%2C%20HR%20Operations%2C%20and%20Employee%20Relations.%20I%20would%20like%20to%20explore%20whether%20you%20are%20open%20to%20discussing%20a%20role%20that%20may%20align%20with%20your%20background.%0A%0ARole%20overview%3A%0A%20%20%E2%80%A2%20Position%3A%20%0A%20%20%E2%80%A2%20Company%3A%20%0A%20%20%E2%80%A2%20Location%20%2F%20Work%20mode%3A%20%0A%20%20%E2%80%A2%20Reporting%20to%3A%20%0A%20%20%E2%80%A2%20Compensation%20range%3A%20%0A%20%20%E2%80%A2%20Expected%20start%20date%3A%20%0A%0ACould%20you%20share%20your%20availability%20for%20a%20brief%20introductory%20call%20this%20week%20or%20next%3F%20I%20would%20be%20glad%20to%20walk%20you%20through%20the%20role%20and%20answer%20any%20questions.%0A%0ALooking%20forward%20to%20your%20response.%0A%0AKind%20regards%2C%0A%5BYour%20full%20name%5D%0A%5BYour%20title%5D%0A%5BCompany%5D%0A%5BPhone%5D" target="_blank" rel="noreferrer">
+            <div class="drawer__card-head">Hiring for an HR role?</div>
+            <div class="drawer__card-sub">Send an email →</div>
+          </a>
+          <a class="drawer__card" href="#experience" data-close-on-click>
+            <div class="drawer__card-head">Curious about my work?</div>
+            <div class="drawer__card-sub">See recent experience →</div>
+          </a>
         </div>
-      </header>
+      </div>
+    </aside>
 
-      <aside class="story-dock reveal" aria-live="polite">
-        <div class="story-dock__top">
-          <span class="story-tag">Story Flow</span>
-          <span class="story-index" id="section-index">01</span>
-        </div>
-        <p class="story-message" id="guide-message">
-          Welcome. The portfolio opens like a living HR sketchbook before
-          moving into story, results, and working style.
-        </p>
-      </aside>
-
-      <main id="top">
-        <section
-          class="hero section-panel reveal"
-          data-section="hero"
-          data-order="01"
-          data-voice="Welcome. The portfolio opens like a living HR sketchbook before moving into story, results, and working style."
-        >
+    <main id="top">
+      <section class="section hero theme-light" data-theme="light">
+        <div class="container hero-grid">
           <div class="hero-copy">
-            <p class="section-kicker">Human Resources Portfolio</p>
-            <p class="section-note">People first. Systems that feel human.</p>
-            <h1>
-              Building workplaces where people feel heard, supported, and
-              valued.
+            <p class="eyebrow">Human Resources · Gurugram, India</p>
+            <h1 class="display">
+              Building workplaces where people feel
+              <span class="accent">heard</span>,
+              <span class="accent accent-alt">supported</span>, and
+              <span class="accent">valued</span>.
             </h1>
-            <p class="hero-summary">
-              Puja Raghav is an HR Professional with 4+ years of experience
-              across Talent Acquisition, HR Operations, and Employee Relations,
-              focused on creating workplaces where individuals grow confidently
-              and teams perform with purpose.
+            <p class="lede">
+              HR Professional with 4+ years across Talent Acquisition, HR
+              Operations, and Employee Relations — helping teams grow
+              confidently and perform with purpose.
             </p>
-
-            <div class="hero-chips">
-              <span>Gurugram, Haryana</span>
-              <span>4+ Years in HR</span>
-              <span>Talent Acquisition</span>
-              <span>HR Operations</span>
-              <span>Employee Relations</span>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#experience">See my work</a>
+              <a class="btn btn-ghost" href="#contact">Get in touch</a>
             </div>
-
-            <p class="hero-link-note">
-              A guided portfolio shaped like a modern notebook of people,
-              culture, and operational work.
-            </p>
-          </div>
-
-          <div class="scene-shell" data-scene>
-            <div class="scene">
-              <div class="scene-floor"></div>
-              <div class="scene-shadow scene-shadow-a"></div>
-              <div class="scene-shadow scene-shadow-b"></div>
-              <div class="scene-doodle doodle-arc"></div>
-              <div class="scene-doodle doodle-arrow"></div>
-
-              <article class="scene-sheet scene-sheet-main">
-                <p class="scene-card__label">HR Notebook</p>
-                <h2>People. Process. Culture.</h2>
-                <p>
-                  Recruitment, onboarding, employee support, and workplace
-                  trust.
-                </p>
-                <div class="scene-pencil-lines">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </article>
-
-              <article class="scene-sheet scene-sheet-process">
-                <p class="scene-card__label">Working Method</p>
-                <ul>
-                  <li>Listen carefully</li>
-                  <li>Hire thoughtfully</li>
-                  <li>Support consistently</li>
-                </ul>
-              </article>
-
-              <article class="scene-sheet scene-sheet-people">
-                <p class="scene-card__label">Team Map</p>
-                <div class="people-map">
-                  <span class="people-node node-root"></span>
-                  <span class="people-node node-left"></span>
-                  <span class="people-node node-center"></span>
-                  <span class="people-node node-right"></span>
-                </div>
-                <p class="people-caption">
-                  Connecting people, roles, and support systems.
-                </p>
-              </article>
-
-              <div class="scene-sticky sticky-one">50+ hires</div>
-              <div class="scene-sticky sticky-two">30% smoother onboarding</div>
-              <div class="scene-sticky sticky-three">Employee relations</div>
+            <div class="hero-meta" id="hero-meta">
+              <div><strong data-count="4" data-suffix="+">0</strong><span>Years in HR</span></div>
+              <div><strong data-count="50" data-suffix="+">0</strong><span>Roles closed</span></div>
+              <div><strong data-count="300" data-suffix="+">0</strong><span>Candidates sourced</span></div>
+              <div><strong data-count="30" data-suffix="%">0</strong><span>Faster onboarding</span></div>
             </div>
           </div>
-        </section>
 
-        <div class="section-bridge" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
+          <div class="hero-portrait">
+            <div class="portrait-wrap">
+              <span class="portrait-corner portrait-corner--tl" aria-hidden="true"></span>
+              <span class="portrait-corner portrait-corner--br" aria-hidden="true"></span>
+              <figure class="portrait">
+                <img src="./Profile-pic.jpeg" alt="Portrait of Puja Raghav" loading="eager" />
+                <figcaption class="portrait-caption">
+                  <span class="portrait-caption__dot"></span>
+                  Available for new roles
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <section
-          class="section-panel reveal"
-          id="about"
-          data-section="about"
-          data-order="02"
-          data-voice="Now the portfolio explains the philosophy behind the work: empathy, clarity, and HR systems that feel human instead of transactional."
-        >
-          <div class="panel-heading">
-            <p class="section-kicker">About</p>
-            <h2>Human-centered systems with real operational depth.</h2>
-            <p class="section-intro">
-              The strongest HR work is not only efficient. It is also trusted,
-              clear, and deeply aware of how people actually experience the
-              workplace.
-            </p>
+      <section class="section about theme-dark" id="about" data-theme="dark">
+        <div class="container about-grid">
+          <div class="about-lead reveal">
+            <p class="eyebrow">About</p>
+            <h2 class="heading-big">
+              People first. Systems that feel human.
+            </h2>
           </div>
-
-          <div class="about-layout">
-            <article class="story-card tilt-card story-card-main">
-              <p>
-                Puja is an HR Professional who believes that people thrive when
-                they feel heard, supported, and valued. With 4+ years of
-                experience across Talent Acquisition, HR Operations, and
-                Employee Relations, she has built her career around creating
-                workplaces where individuals can grow confidently and teams can
-                perform with purpose.
-              </p>
-              <p>
-                Her approach is simple: understand people deeply, communicate
-                openly, and design HR processes that feel human, not
-                transactional.
-              </p>
-              <p>
-                Puja has helped diverse teams find the right talent, navigate
-                challenges, and build a culture of trust, clarity, and
-                connection. She values empathy just as much as efficiency,
-                ensuring that every decision contributes to a healthier and more
-                motivated workplace.
-              </p>
-            </article>
-
-            <article class="principles-card tilt-card approach-card">
-              <p class="mini-label">How Puja Works</p>
-              <div class="principles-list">
-                <div>
-                  <strong>01</strong>
-                  <span>Listen before designing the process.</span>
-                </div>
-                <div>
-                  <strong>02</strong>
-                  <span>Keep communication open, timely, and clear.</span>
-                </div>
-                <div>
-                  <strong>03</strong>
-                  <span>Balance empathy with operational discipline.</span>
-                </div>
-              </div>
-              <div class="approach-tags">
-                <span>Empathy</span>
-                <span>Clarity</span>
-                <span>Trust</span>
-              </div>
-            </article>
-
-            <article class="metrics-board tilt-card metrics-board-grid">
-              <div class="metric-tower metric-tile">
-                <span class="metric-tower__value">4+</span>
-                <span class="metric-tower__label">Years across HR functions</span>
-              </div>
-              <div class="metric-tower metric-tile">
-                <span class="metric-tower__value">50+</span>
-                <span class="metric-tower__label">Freight and support roles closed</span>
-              </div>
-              <div class="metric-tower metric-tile">
-                <span class="metric-tower__value">60+</span>
-                <span class="metric-tower__label">EdTech roles closed</span>
-              </div>
-              <div class="metric-tower metric-tile">
-                <span class="metric-tower__value">300+</span>
-                <span class="metric-tower__label">Candidates sourced and shortlisted</span>
-              </div>
-            </article>
-
-            <article class="quote-card tilt-card">
-              <p class="mini-label">Core Belief</p>
-              <h3>Human, not transactional.</h3>
-              <p>
-                If you believe in meaningful work, positive culture, and
-                genuine human connection, connect with me.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <div class="section-bridge" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <section
-          class="section-panel reveal"
-          id="experience"
-          data-section="experience"
-          data-order="03"
-          data-voice="This is the proof layer. Each role is arranged as a clean impact card with business context and measurable outcomes."
-        >
-          <div class="panel-heading panel-heading-wide">
-            <div class="panel-heading__lead">
-              <p class="section-kicker">Experience</p>
-              <h2>Career progression presented as impact, not just titles.</h2>
-            </div>
-            <div class="panel-heading__aside">
-              <span class="heading-rule" aria-hidden="true"></span>
-              <p class="section-intro">
-                A visual timeline of hiring, operations, and employee support
-                work across freight, EdTech, and executive search.
-              </p>
-            </div>
-          </div>
-
-          <div class="experience-stack">
-            <span class="experience-axis-note experience-axis-note--start">Today</span>
-            <span class="experience-axis-note experience-axis-note--end">2021</span>
-            <article class="experience-card tilt-card">
-              <div class="experience-card__top">
-                <div>
-                  <p class="mini-label">Sep 2023 - Present</p>
-                  <h3>Senior Executive Human Resources</h3>
-                  <p class="experience-meta">Abreco Freight / Delhi / On-site</p>
-                </div>
-                <span class="experience-flag">Current</span>
-              </div>
-              <p class="experience-summary">
-                Responsible for managing end-to-end HR operations including
-                recruitment, onboarding, payroll inputs, attendance, leave
-                management, and employee relations. Supports smooth HR
-                processes, compliance, employee engagement, performance
-                management, and retention initiatives across the organization.
-              </p>
-              <ul class="experience-metrics">
-                <li>Closed 50+ positions across freight, operations, and support functions</li>
-                <li>Improved onboarding efficiency by 30% through structured checklists</li>
-                <li>Achieved 100% accuracy in monthly payroll inputs</li>
-                <li>Reduced employee query resolution time by 40%</li>
-                <li>Improved employee query response time through timely support</li>
-                <li>Executed monthly employee engagement activities to boost morale</li>
-              </ul>
-              <div class="experience-card__notes">
-                <span>Recruitment</span>
-                <span>Payroll Inputs</span>
-                <span>Employee Relations</span>
-              </div>
-            </article>
-
-            <article class="experience-card tilt-card">
-              <div class="experience-card__top">
-                <div>
-                  <p class="mini-label">Dec 2021 - Aug 2023</p>
-                  <h3>Talent Acquisition</h3>
-                  <p class="experience-meta">Dataisgood / Noida / Remote</p>
-                </div>
-                <span class="experience-flag">Growth</span>
-              </div>
-              <p class="experience-summary">
-                Managed full-cycle recruitment for EdTech roles including
-                sourcing, screening, interviewing, onboarding, and training.
-                Built a strong talent pipeline and ensured a smooth candidate
-                and new-hire experience.
-              </p>
-              <ul class="experience-metrics">
-                <li>Closed 60+ EdTech roles across sales, operations, and academic teams</li>
-                <li>Conducted 200+ candidate screenings and 100+ interviews</li>
-                <li>Managed onboarding and induction for 50+ new hires</li>
-                <li>Maintained a 95% candidate follow-up rate</li>
-                <li>Developed training support for new joiners</li>
-              </ul>
-              <div class="experience-card__notes">
-                <span>Sourcing</span>
-                <span>Interviewing</span>
-                <span>Onboarding</span>
-              </div>
-            </article>
-
-            <article class="experience-card tilt-card">
-              <div class="experience-card__top">
-                <div>
-                  <p class="mini-label">Jan 2021 - Dec 2021</p>
-                  <h3>Executive Search Professional</h3>
-                  <p class="experience-meta">
-                    Strategic Talent Partner / Gurugram / Remote
-                  </p>
-                </div>
-                <span class="experience-flag">Foundation</span>
-              </div>
-              <p class="experience-summary">
-                Handled the full recruitment lifecycle for multiple client
-                companies, including job requirement understanding, sourcing,
-                headhunting, screening, interview coordination, and onboarding
-                follow-ups. Delivered high-quality talent pipelines across
-                diverse corporate roles.
-              </p>
-              <ul class="experience-metrics">
-                <li>Managed recruitment for 25+ client roles</li>
-                <li>Sourced and shortlisted 300+ candidates</li>
-                <li>Coordinated 50+ interview rounds with clients</li>
-                <li>Maintained 90% client satisfaction on hiring projects</li>
-                <li>Created structured job descriptions for 30+ positions</li>
-              </ul>
-              <div class="experience-card__notes">
-                <span>Executive Search</span>
-                <span>Client Hiring</span>
-                <span>Screening</span>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <div class="section-bridge" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <section
-          class="section-panel reveal"
-          id="capabilities"
-          data-section="capabilities"
-          data-order="04"
-          data-voice="After the results, the page reframes the work into memorable strengths that are easy to scan and easy to trust."
-        >
-          <div class="panel-heading panel-heading-wide">
-            <div class="panel-heading__lead">
-              <p class="section-kicker">Capabilities</p>
-              <h2>Core strengths shaped into a more premium professional profile.</h2>
-            </div>
-            <div class="panel-heading__aside">
-              <span class="heading-rule" aria-hidden="true"></span>
-              <p class="section-intro">
-                Structured like working pillars so recruiters and collaborators
-                can scan the profile quickly without losing nuance.
-              </p>
-            </div>
-          </div>
-
-          <div class="capability-grid">
-            <article class="capability-card tilt-card">
-              <span class="capability-no">01</span>
-              <h3>Talent Acquisition</h3>
-              <p>
-                Full-cycle recruitment experience across sourcing, screening,
-                interviewing, onboarding, and candidate follow-up.
-              </p>
-              <div class="capability-card__meta">
-                <span>Hiring flow</span>
-                <span>Candidate care</span>
-              </div>
-            </article>
-            <article class="capability-card tilt-card">
-              <span class="capability-no">02</span>
-              <h3>HR Operations</h3>
-              <p>
-                Practical ownership of payroll inputs, attendance, leave
-                management, compliance support, and daily HR coordination.
-              </p>
-              <div class="capability-card__meta">
-                <span>Process discipline</span>
-                <span>Daily operations</span>
-              </div>
-            </article>
-            <article class="capability-card tilt-card">
-              <span class="capability-no">03</span>
-              <h3>Employee Relations</h3>
-              <p>
-                Trust-building support through clear communication, query
-                handling, engagement activities, and consistent follow-through.
-              </p>
-              <div class="capability-card__meta">
-                <span>Trust</span>
-                <span>Support systems</span>
-              </div>
-            </article>
-            <article class="capability-card tilt-card">
-              <span class="capability-no">04</span>
-              <h3>Human-Centered HR</h3>
-              <p>
-                A working style that balances empathy with efficiency so HR
-                systems feel supportive, thoughtful, and business-ready.
-              </p>
-              <div class="capability-card__meta">
-                <span>Empathy</span>
-                <span>Clarity in action</span>
-              </div>
-            </article>
-          </div>
-
-          <div class="capability-rail">
-            <span>Understand people deeply</span>
-            <span>Communicate openly</span>
-            <span>Design trust into the process</span>
-          </div>
-        </section>
-
-        <div class="section-bridge" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <section
-          class="section-panel reveal"
-          id="education"
-          data-section="education"
-          data-order="05"
-          data-voice="This section grounds the portfolio with the academic path behind the professional journey."
-        >
-          <div class="panel-heading">
-            <p class="section-kicker">Education</p>
-            <h2>The academic foundation behind the operational story.</h2>
-          </div>
-
-          <div class="education-grid">
-            <article class="education-card tilt-card">
-              <p class="mini-label">Postgraduate</p>
-              <h3>Master of Business Administration</h3>
-              <p>APJ Abdul Kalam Technological University</p>
-            </article>
-            <article class="education-card tilt-card">
-              <p class="mini-label">Undergraduate</p>
-              <h3>Bachelor of Commerce</h3>
-              <p>Choudhary Charan Singh University, Meerut</p>
-            </article>
-          </div>
-        </section>
-
-        <div class="section-bridge" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <section
-          class="section-panel reveal final-panel"
-          id="library"
-          data-section="library"
-          data-order="06"
-          data-voice="The portfolio closes with an organized archive for resources, documents, certificates, and capability notes."
-        >
-          <div class="panel-heading">
-            <p class="section-kicker">Portfolio Library</p>
-            <h2>Supporting material arranged like a professional archive.</h2>
-            <p class="section-intro">
-              The site is designed to grow with documents, certificates,
-              resources, and capability proof without losing visual quality.
-            </p>
-          </div>
-
-          <div class="library-grid">
-            <a class="library-card tilt-card" href="./resources/">
-              <span class="library-card__label">Resources</span>
-              <h3>Reference material and working assets</h3>
-              <p>Templates, preparation notes, examples, and supporting files.</p>
-            </a>
-            <a class="library-card tilt-card" href="./docs/">
-              <span class="library-card__label">Docs</span>
-              <h3>Career documents and portfolio notes</h3>
-              <p>Resume drafts, role summaries, case notes, and profile research.</p>
-            </a>
-            <a class="library-card tilt-card" href="./certificates/">
-              <span class="library-card__label">Certificates</span>
-              <h3>Training records and proof of learning</h3>
-              <p>Certifications, workshops, badges, and formal achievements.</p>
-            </a>
-            <a class="library-card tilt-card" href="./capabilities/">
-              <span class="library-card__label">Capabilities</span>
-              <h3>Skill framing and capability statements</h3>
-              <p>Focused pages that explain working strengths in more detail.</p>
-            </a>
-          </div>
-
-          <div class="closing-band">
+          <div class="about-body reveal">
             <p>
-              If you believe in meaningful work, positive culture, and genuine
-              human connection, connect with me. I love conversations that
-              inspire growth and collaboration.
+              I believe people thrive when they feel heard, supported, and
+              valued. My approach is simple: understand people deeply,
+              communicate openly, and design HR processes that feel human, not
+              transactional.
             </p>
-            <div class="closing-actions">
-              <a
-                class="button button-primary"
-                href="https://www.linkedin.com/in/puja-r-964060224/"
-                target="_blank"
-                rel="noreferrer"
-                >Connect on LinkedIn</a
-              >
-              <a
-                class="button button-secondary"
-                href="https://github.com/noida-puja/Portfolio"
-                target="_blank"
-                rel="noreferrer"
-                >View GitHub Repo</a
-              >
+            <p>
+              Across Talent Acquisition, HR Operations, and Employee Relations,
+              I've helped diverse teams find the right talent, navigate
+              challenges, and build a culture of trust, clarity, and
+              connection.
+            </p>
+            <ul class="principles">
+              <li><span>01</span>Listen before designing the process.</li>
+              <li><span>02</span>Keep communication open, timely, clear.</li>
+              <li><span>03</span>Balance empathy with operational discipline.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <div class="marquee theme-dark" data-theme="dark" aria-hidden="true">
+        <div class="marquee__track">
+          <span>Talent Acquisition</span><span class="marquee__dot"></span>
+          <span>HR Operations</span><span class="marquee__dot"></span>
+          <span>Employee Relations</span><span class="marquee__dot"></span>
+          <span>People-First Culture</span><span class="marquee__dot"></span>
+          <span>Talent Acquisition</span><span class="marquee__dot"></span>
+          <span>HR Operations</span><span class="marquee__dot"></span>
+          <span>Employee Relations</span><span class="marquee__dot"></span>
+          <span>People-First Culture</span><span class="marquee__dot"></span>
+        </div>
+      </div>
+
+      <section class="section experience-pinned theme-light" id="experience" data-theme="light">
+        <div class="pinned-scroller" data-pinned data-steps="3">
+          <div class="pinned-inner">
+            <div class="container pinned-stage">
+              <div class="pinned-header">
+                <p class="eyebrow">Experience</p>
+                <h2 class="heading-big pinned-title">Career as a <span class="accent">roadmap</span>.</h2>
+                <div class="pinned-progress" aria-hidden="true">
+                  <span class="pinned-dot" data-step="0"></span>
+                  <span class="pinned-dot" data-step="1"></span>
+                  <span class="pinned-dot" data-step="2"></span>
+                </div>
+              </div>
+
+              <div class="pinned-cards">
+                <article class="pinned-card" data-step="0">
+                  <div class="pinned-card__side">
+                    <p class="step-num">01</p>
+                    <p class="step-date">Sep 2023 — Present</p>
+                    <em class="step-flag">Current</em>
+                  </div>
+                  <div class="pinned-card__body">
+                    <h3>Senior Executive — Human Resources</h3>
+                    <p class="meta">Abreco Freight · Delhi · On-site</p>
+                    <p>Leading end-to-end HR for a growing freight business — from hiring the right people to keeping payroll, policy, and employee experience running smoothly every month.</p>
+                    <ul>
+                      <li>Closed <strong>50+ roles</strong> across freight ops, logistics, and support functions</li>
+                      <li>Rebuilt onboarding into a structured 7-day journey — <strong>30% faster time-to-productivity</strong></li>
+                      <li>Drove <strong>100% payroll accuracy</strong> month-on-month with clean attendance and leave inputs</li>
+                      <li>Cut employee query resolution time by <strong>40%</strong> through a single point-of-contact workflow</li>
+                      <li>Ran monthly engagement rituals that lifted participation and internal morale</li>
+                    </ul>
+                    <div class="tags"><span>HR Operations</span><span>Recruitment</span><span>Payroll</span><span>Engagement</span></div>
+                  </div>
+                </article>
+
+                <article class="pinned-card" data-step="1">
+                  <div class="pinned-card__side">
+                    <p class="step-num">02</p>
+                    <p class="step-date">Dec 2021 — Aug 2023</p>
+                    <em class="step-flag">Growth</em>
+                  </div>
+                  <div class="pinned-card__body">
+                    <h3>Talent Acquisition Specialist</h3>
+                    <p class="meta">Dataisgood · Noida · Remote</p>
+                    <p>Owned full-cycle hiring for a fast-moving EdTech team — sourcing, screening, interviewing, and onboarding talent across sales, operations, and academic functions.</p>
+                    <ul>
+                      <li>Closed <strong>60+ EdTech roles</strong> across revenue, operations, and academic teams</li>
+                      <li>Screened <strong>200+ candidates</strong> and conducted <strong>100+ structured interviews</strong></li>
+                      <li>Onboarded <strong>50+ new hires</strong> with a consistent day-one experience</li>
+                      <li>Held a <strong>95% candidate follow-up rate</strong> — no one left without a clear answer</li>
+                      <li>Supported trainer enablement, easing the ramp from hire to contribution</li>
+                    </ul>
+                    <div class="tags"><span>Sourcing</span><span>Interviewing</span><span>Onboarding</span><span>EdTech</span></div>
+                  </div>
+                </article>
+
+                <article class="pinned-card" data-step="2">
+                  <div class="pinned-card__side">
+                    <p class="step-num">03</p>
+                    <p class="step-date">Jan 2021 — Dec 2021</p>
+                    <em class="step-flag">Foundation</em>
+                  </div>
+                  <div class="pinned-card__body">
+                    <h3>Executive Search Consultant</h3>
+                    <p class="meta">Strategic Talent Partner · Gurugram · Remote</p>
+                    <p>Partnered with multiple client companies on executive and niche hiring — understanding briefs, headhunting the right profiles, and managing the hiring journey to close.</p>
+                    <ul>
+                      <li>Delivered on <strong>25+ client mandates</strong> across diverse corporate roles</li>
+                      <li>Sourced and shortlisted <strong>300+ candidates</strong> through targeted headhunting</li>
+                      <li>Coordinated <strong>50+ interview rounds</strong>, keeping clients and candidates aligned</li>
+                      <li>Maintained a <strong>90% client satisfaction rate</strong> across hiring projects</li>
+                      <li>Wrote <strong>30+ structured job descriptions</strong> that sharpened each search</li>
+                    </ul>
+                    <div class="tags"><span>Executive Search</span><span>Headhunting</span><span>Client Hiring</span></div>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      <footer class="site-footer">
-        <p>Interactive portfolio built for GitHub Pages.</p>
-        <p><span id="year"></span> Puja Raghav</p>
+      <section class="section capabilities theme-dark" id="capabilities" data-theme="dark">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Capabilities</p>
+            <h2 class="heading-big">Four pillars of working practice.</h2>
+          </div>
+          <div class="cap-grid">
+            <article class="cap reveal">
+              <span class="cap__no">01</span>
+              <h3>Talent Acquisition</h3>
+              <p>Full-cycle recruitment across sourcing, screening, interviewing, onboarding, and candidate care.</p>
+            </article>
+            <article class="cap reveal">
+              <span class="cap__no">02</span>
+              <h3>HR Operations</h3>
+              <p>Payroll inputs, attendance, leave management, compliance support, and daily coordination.</p>
+            </article>
+            <article class="cap reveal">
+              <span class="cap__no">03</span>
+              <h3>Employee Relations</h3>
+              <p>Trust-building through clear communication, query handling, and consistent follow-through.</p>
+            </article>
+            <article class="cap reveal">
+              <span class="cap__no">04</span>
+              <h3>Human-Centered HR</h3>
+              <p>Balancing empathy with efficiency so HR systems feel supportive and business-ready.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section education theme-light" id="education" data-theme="light">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Education</p>
+            <h2 class="heading-big">The foundation behind the work.</h2>
+          </div>
+          <div class="edu-grid">
+            <article class="edu reveal">
+              <p class="mini">Postgraduate</p>
+              <h3>Master of Business Administration</h3>
+              <p class="meta">APJ Abdul Kalam Technological University</p>
+            </article>
+            <article class="edu reveal">
+              <p class="mini">Undergraduate</p>
+              <h3>Bachelor of Commerce</h3>
+              <p class="meta">Choudhary Charan Singh University, Meerut</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact theme-dark" id="contact" data-theme="dark">
+        <div class="container contact-wrap">
+          <div class="reveal">
+            <p class="eyebrow">Contact</p>
+            <h2 class="heading-big">
+              If you believe in meaningful work and genuine human connection —
+              <span class="accent accent-alt">let's talk</span>.
+            </h2>
+          </div>
+          <div class="contact-actions reveal">
+            <a class="btn btn-primary" href="https://www.linkedin.com/in/puja-r-964060224/" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+            <a class="btn btn-ghost" href="https://mail.google.com/mail/?view=cm&fs=1&to=noida.puja@gmail.com&su=Potential%20HR%20opportunity%20%E2%80%94%20%5BCompany%20Name%5D&body=Dear%20Puja%2C%0A%0AI%20hope%20this%20message%20finds%20you%20well.%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20experience%20across%20Talent%20Acquisition%2C%20HR%20Operations%2C%20and%20Employee%20Relations.%20I%20would%20like%20to%20explore%20whether%20you%20are%20open%20to%20discussing%20a%20role%20that%20may%20align%20with%20your%20background.%0A%0ARole%20overview%3A%0A%20%20%E2%80%A2%20Position%3A%20%0A%20%20%E2%80%A2%20Company%3A%20%0A%20%20%E2%80%A2%20Location%20%2F%20Work%20mode%3A%20%0A%20%20%E2%80%A2%20Reporting%20to%3A%20%0A%20%20%E2%80%A2%20Compensation%20range%3A%20%0A%20%20%E2%80%A2%20Expected%20start%20date%3A%20%0A%0ACould%20you%20share%20your%20availability%20for%20a%20brief%20introductory%20call%20this%20week%20or%20next%3F%20I%20would%20be%20glad%20to%20walk%20you%20through%20the%20role%20and%20answer%20any%20questions.%0A%0ALooking%20forward%20to%20your%20response.%0A%0AKind%20regards%2C%0A%5BYour%20full%20name%5D%0A%5BYour%20title%5D%0A%5BCompany%5D%0A%5BPhone%5D" target="_blank" rel="noreferrer">Send an email</a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer theme-dark" data-theme="dark">
+        <div class="container footer-inner">
+          <div>
+            <strong>Puja Raghav</strong>
+            <span>HR Professional · Gurugram, Haryana</span>
+          </div>
+          <div class="footer-links">
+            <a href="https://www.linkedin.com/in/puja-r-964060224/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <p class="footer-copy">© <span id="year"></span> Puja Raghav</p>
+        </div>
       </footer>
-    </div>
+    </main>
 
     <script src="./script.js"></script>
   </body>

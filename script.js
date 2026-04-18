@@ -1,144 +1,200 @@
-const yearNode = document.querySelector("#year");
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
+(() => {
+  const yearNode = document.querySelector("#year");
+  if (yearNode) yearNode.textContent = new Date().getFullYear();
 
-const prefersReducedMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
+  /* ---------- Scroll-triggered theme swap (light ↔ dark) ---------- */
+  const themedSections = Array.from(document.querySelectorAll("[data-theme]"));
+  const body = document.body;
+  let currentTheme = null;
+  let lastY = window.scrollY;
+  let direction = "down";
+  let desiredTheme = null;
+  let desiredSince = 0;
+  const ENTER_DOWN = 120;
+  const ENTER_UP = 60;
+  const STABLE_DOWN = 140;
+  const STABLE_UP = 70;
 
-const revealNodes = document.querySelectorAll(".reveal");
+  function applyTheme(theme) {
+    if (theme === currentTheme) return;
+    currentTheme = theme;
+    body.classList.toggle("theme-dark-active", theme === "dark");
+  }
 
-if (!prefersReducedMotion) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
+  function updateTheme() {
+    if (!themedSections.length) return;
+    const y = window.scrollY;
+    direction = y > lastY ? "down" : y < lastY ? "up" : direction;
+    lastY = y;
 
-        entry.target.classList.add("reveal-visible");
-        revealObserver.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.14,
-      rootMargin: "0px 0px -36px 0px",
+    const midY = window.innerHeight * 0.5;
+    const midAbs = y + midY;
+
+    let nearestTheme = currentTheme || "light";
+    let nearestDist = Infinity;
+    let coverMargin = -1;
+
+    themedSections.forEach((sec) => {
+      const rect = sec.getBoundingClientRect();
+      const top = rect.top + window.scrollY;
+      const bottom = rect.bottom + window.scrollY;
+      const covers = top <= midAbs && bottom >= midAbs;
+      const dist = covers
+        ? 0
+        : Math.min(Math.abs(top - midAbs), Math.abs(bottom - midAbs));
+      if (dist < nearestDist) {
+        nearestDist = dist;
+        nearestTheme = sec.dataset.theme;
+        if (covers) coverMargin = Math.min(midAbs - top, bottom - midAbs);
+      }
+    });
+
+    const ENTER = direction === "down" ? ENTER_DOWN : ENTER_UP;
+    const STABLE = direction === "down" ? STABLE_DOWN : STABLE_UP;
+
+    let next = currentTheme ?? nearestTheme;
+    if (nearestDist === 0 && coverMargin >= ENTER) next = nearestTheme;
+
+    const now = performance.now();
+    if (next !== desiredTheme) {
+      desiredTheme = next;
+      desiredSince = now;
     }
+    if (now - desiredSince >= STABLE) applyTheme(desiredTheme);
+  }
+
+  let ticking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateTheme();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    },
+    { passive: true }
   );
 
-  revealNodes.forEach((node) => revealObserver.observe(node));
-} else {
-  revealNodes.forEach((node) => node.classList.add("reveal-visible"));
-}
+  // initialize theme
+  applyTheme(themedSections[0]?.dataset.theme || "light");
+  updateTheme();
 
-const guideMessage = document.querySelector("#guide-message");
-const sectionIndex = document.querySelector("#section-index");
-const sectionNodes = document.querySelectorAll("[data-section][data-voice]");
-const navLinks = document.querySelectorAll("[data-nav]");
-
-function setActiveSection(sectionId, message, order) {
-  if (guideMessage) {
-    guideMessage.textContent = message;
+  /* ---------- Reveal on scroll ---------- */
+  const revealItems = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -60px 0px" }
+    );
+    revealItems.forEach((el) => io.observe(el));
+  } else {
+    revealItems.forEach((el) => el.classList.add("visible"));
   }
 
-  if (sectionIndex && order) {
-    sectionIndex.textContent = order;
+  /* ---------- Drawer (Connect) ---------- */
+  const drawer = document.getElementById("drawer");
+  const openBtns = document.querySelectorAll("[data-open-drawer]");
+  const closeBtns = document.querySelectorAll("[data-close-drawer]");
+  const closeOnClick = document.querySelectorAll("[data-close-on-click]");
+
+  function openDrawer() {
+    if (!drawer) return;
+    drawer.classList.add("open");
+    drawer.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+  function closeDrawer() {
+    if (!drawer) return;
+    drawer.classList.remove("open");
+    drawer.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
   }
 
-  navLinks.forEach((link) => {
-    const href = (link.getAttribute("href") || "").replace("#", "");
-    const heroFallback = sectionId === "hero" && href === "about";
-    link.classList.toggle("is-active", href === sectionId || heroFallback);
+  openBtns.forEach((b) => b.addEventListener("click", openDrawer));
+  closeBtns.forEach((b) => b.addEventListener("click", closeDrawer));
+  closeOnClick.forEach((b) => b.addEventListener("click", closeDrawer));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeDrawer();
   });
-}
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+  /* ---------- Pinned roadmap (sticky section, content changes) ---------- */
+  document.querySelectorAll("[data-pinned]").forEach((scroller) => {
+    const steps = parseInt(scroller.dataset.steps, 10) || 1;
+    const cards = scroller.querySelectorAll(".pinned-card");
+    const dots = scroller.querySelectorAll(".pinned-dot");
+    let lastActive = -1;
 
-    if (!visible.length) {
-      return;
+    function setActive(i) {
+      if (i === lastActive) return;
+      lastActive = i;
+      cards.forEach((c, idx) => {
+        c.classList.toggle("active", idx === i);
+        c.classList.toggle("exit", idx < i);
+      });
+      dots.forEach((d, idx) => d.classList.toggle("active", idx <= i));
     }
 
-    const current = visible[0].target;
-    setActiveSection(
-      current.dataset.section,
-      current.dataset.voice,
-      current.dataset.order
+    function onScroll() {
+      const rect = scroller.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = scroller.offsetHeight - vh;
+      if (total <= 0) return setActive(0);
+      const progress = Math.min(1, Math.max(0, -rect.top / total));
+      const i = Math.min(steps - 1, Math.floor(progress * steps));
+      setActive(i);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  });
+
+  /* ---------- Number counters ---------- */
+  const counters = document.querySelectorAll("[data-count]");
+  if (counters.length && "IntersectionObserver" in window) {
+    const countIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          const target = parseInt(el.dataset.count, 10);
+          const suffix = el.dataset.suffix || "";
+          const duration = 1400;
+          const start = performance.now();
+          function tick(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            el.textContent = Math.round(target * eased) + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+          countIO.unobserve(el);
+        });
+      },
+      { threshold: 0.6 }
     );
-  },
-  {
-    threshold: [0.3, 0.5, 0.75],
-    rootMargin: "-12% 0px -30% 0px",
-  }
-);
-
-sectionNodes.forEach((section) => sectionObserver.observe(section));
-
-setActiveSection(
-  "hero",
-  "Welcome. The portfolio opens like a living HR sketchbook before moving into story, results, and working style.",
-  "01"
-);
-
-const cursorGlow = document.querySelector(".cursor-glow");
-document.addEventListener("pointermove", (event) => {
-  if (!cursorGlow || prefersReducedMotion) {
-    return;
+    counters.forEach((c) => countIO.observe(c));
   }
 
-  cursorGlow.style.setProperty("--cursor-x", `${event.clientX}px`);
-  cursorGlow.style.setProperty("--cursor-y", `${event.clientY}px`);
-});
-
-const sceneShell = document.querySelector("[data-scene]");
-const scene = document.querySelector(".scene");
-
-if (sceneShell && scene && !prefersReducedMotion) {
-  sceneShell.addEventListener("pointermove", (event) => {
-    const rect = sceneShell.getBoundingClientRect();
-    const px = (event.clientX - rect.left) / rect.width;
-    const py = (event.clientY - rect.top) / rect.height;
-
-    const rotateY = (px - 0.5) * 18;
-    const rotateX = (0.5 - py) * 16;
-
-    scene.style.setProperty("--scene-ry", `${rotateY}deg`);
-    scene.style.setProperty("--scene-rx", `${rotateX}deg`);
+  /* ---------- Smooth-scroll for in-page anchors ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href").slice(1);
+      if (!id) return;
+      const target = document.getElementById(id);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   });
-
-  sceneShell.addEventListener("pointerleave", () => {
-    scene.style.setProperty("--scene-ry", "8deg");
-    scene.style.setProperty("--scene-rx", "-10deg");
-  });
-}
-
-const tiltCards = document.querySelectorAll(".tilt-card");
-
-tiltCards.forEach((card) => {
-  if (prefersReducedMotion) {
-    return;
-  }
-
-  card.addEventListener("pointermove", (event) => {
-    const rect = card.getBoundingClientRect();
-    const px = (event.clientX - rect.left) / rect.width;
-    const py = (event.clientY - rect.top) / rect.height;
-
-    const tiltY = (px - 0.5) * 10;
-    const tiltX = (0.5 - py) * 8;
-
-    card.style.setProperty("--tilt-y", `${tiltY}deg`);
-    card.style.setProperty("--tilt-x", `${tiltX}deg`);
-    card.style.setProperty("--tilt-lift", "-6px");
-  });
-
-  card.addEventListener("pointerleave", () => {
-    card.style.setProperty("--tilt-y", "0deg");
-    card.style.setProperty("--tilt-x", "0deg");
-    card.style.setProperty("--tilt-lift", "0px");
-  });
-});
+})();
